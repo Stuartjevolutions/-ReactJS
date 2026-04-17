@@ -1,23 +1,32 @@
 // Componente que permite seleccionar categorías
 function Categories({ setCategory }) {
-
   return (
     <div>
       <h3>Categorías</h3>
 
-      {/* Botón para mostrar todos los productos */}
+      {/* Mostrar todos */}
       <button onClick={() => setCategory("todos")}>
         Todos
       </button>
 
-      {/* Botón para filtrar laptops */}
+      <button onClick={() => setCategory("celulares")}>
+        Celulares
+      </button>
+
+      <button onClick={() => setCategory("drones")}>
+        Drones
+      </button>
+
       <button onClick={() => setCategory("laptops")}>
         Laptops
       </button>
 
-      {/* Botón para filtrar accesorios */}
       <button onClick={() => setCategory("accesorios")}>
         Accesorios
+      </button>
+
+      <button onClick={() => setCategory("pcgamer")}>
+        PC Gamer
       </button>
 
     </div>

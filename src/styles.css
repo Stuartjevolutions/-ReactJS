@@ -1,0 +1,117 @@
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+/* HOME */
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") no-repeat center/cover;
+}
+
+.home h1 {
+  font-size: 60px;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+}
+
+.home button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 18px;
+  background: #22c55e;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+
+.catalog-content {
+  display: flex;
+  flex-direction: row;
+}
+
+/* IZQUIERDA */
+.categories {
+  width: 25%;
+  padding: 20px;
+  order: 1; /* 👈 fuerza izquierda */
+}
+
+/* DERECHA */
+.products {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  order: 2; /* 👈 fuerza derecha */
+}
+/* TARJETA */
+.card {
+  background: #1e293b;
+  border-radius: 10px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 8px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* CATEGORÍAS */
+.categories {
+  width: 30%;
+  padding: 20px;
+}
+
+.categories button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  background: #334155;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* CARRITO */
+.cart {
+  margin-top: 20px;
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.cart button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #22c55e;
+  border: none;
+  color: white;
+  cursor: pointer;
+}

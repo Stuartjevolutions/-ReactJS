@@ -3,43 +3,35 @@ import Categories from "./Categories";
 import ProductList from "./ProductList";
 import Cart from "./Cart";
 
-// Componente principal del catálogo
 function Catalog() {
-
-  // Estado para categoría seleccionada
   const [category, setCategory] = useState("todos");
-
-  // Estado para el carrito
   const [cart, setCart] = useState([]);
 
-  // Función para agregar productos al carrito
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
 
   return (
-    <div>
+    <div className="catalog">
 
-      {/* Contenedor principal dividido */}
-      <div style={{ display: "flex" }}>
+      <div className="catalog-content">
 
-        {/* IZQUIERDA: productos */}
-        <div style={{ width: "70%" }}>
+        <div className="products">
           <ProductList
             category={category}
             addToCart={addToCart}
           />
         </div>
 
-        {/* DERECHA: categorías */}
-        <div style={{ width: "30%" }}>
+        <div className="categories">
           <Categories setCategory={setCategory} />
         </div>
 
       </div>
 
-      {/* PARTE INFERIOR: carrito */}
-      <Cart cart={cart} />
+      <div className="cart">
+        <Cart cart={cart} />
+      </div>
 
     </div>
   );

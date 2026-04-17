@@ -1,31 +1,45 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Categories from "./Categories";
+import ProductList from "./ProductList";
+import Cart from "./Cart";
 
-// Pantalla principal del sistema
-function Home() {
+// Componente principal del catálogo
+function Catalog() {
+  const [category, setCategory] = useState("todos");
+  const [cart, setCart] = useState([]);
 
-  const navigate = useNavigate();
+  // Función para agregar productos al carrito
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
 
   return (
-    <div style={{
-      height: "100vh",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-      background: "#111",
-      color: "white"
-    }}>
-      
-      {/* Título principal */}
-      <h1>Cyber Store</h1>
+    <div className="catalog">
 
-      {/* Botón para ir al catálogo */}
-      <button onClick={() => navigate("/catalog")}>
-        Ir al catálogo
-      </button>
+      <div className="catalog-content">
+
+        {/* IZQUIERDA: categorías */}
+        <div className="categories">
+          <Categories setCategory={setCategory} />
+        </div>
+
+        {/* DERECHA: productos */}
+        <div className="products">
+          <ProductList
+            category={category}
+            addToCart={addToCart}
+          />
+        </div>
+
+      </div>
+
+      {/* ABAJO: carrito */}
+      <div className="cart">
+        <Cart cart={cart} />
+      </div>
 
     </div>
   );
 }
 
-export default Home;
+export default Catalog;
